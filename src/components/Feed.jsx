@@ -6,12 +6,12 @@ import { fetchFromAPI } from "../utils/fetchFromAPI";
 const Feed = () => {
   // Change categories from sidebar with a default of New
   const [selectedCategory, setSelectedCategory] = useState("New");
-  const [videos, setvideos] = useState([]);
+  const [videos, setVideos] = useState([]);
 
   // Run fetch on each change of category
   useEffect(() => {
     fetchFromAPI(`search?part=snippet&q=${selectedCategory}`).then((data) =>
-      setvideos(data.items)
+      setVideos(data.items)
     );
   }, [selectedCategory]);
 
