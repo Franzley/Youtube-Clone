@@ -38,7 +38,7 @@ const Feed = () => {
         </Typography>
       </Box>
 
-      {/* Videos */}
+      {/* Videos Section */}
       <Box p={2} sx={{ overflowY: "auto", height: "90vh", flex: 2 }}>
         <Typography
           variant="h4"
