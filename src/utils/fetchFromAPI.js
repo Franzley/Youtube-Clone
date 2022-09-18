@@ -7,7 +7,7 @@ const options = {
     // relatedToVideoId: "7ghhRHRP6t4",
     // part: "id,snippet",
     // type: "video",
-    maxResults: "50",
+    maxResults: "20",
   },
   headers: {
     "X-RapidAPI-Key": process.env.REACT_APP_RAPID_API_KEY,
