@@ -51,7 +51,7 @@ a {
   text-transform: capitalize;
   display: flex;
   align-items: center;
-  justify-content: start;
+  justify-content: flex-start;
   cursor: pointer;
   background: transparent;
   outline: none;
@@ -87,7 +87,3 @@ a {
     width: 200px;
   }
 }
-
-/* .css-cd5d1l-MuiStack-root .MuiBox-root:first-child{
-  display: none;
-} */

@@ -11,7 +11,6 @@ const SearchFeed = () => {
 
   // Run fetch on each change of category
   useEffect(() => {
-    // fetchFromAPI(`search?part=snippet&q=${}`).then((data) =>
     fetchFromAPI(`search?part=snippet&q=${searchTerm}`).then((data) =>
       setVideos(data.items)
     );
