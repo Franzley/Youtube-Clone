@@ -1,15 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Box, Typography } from "@mui/material";
-import { Videos } from "./";
+import { Videos } from "./exports";
 import { fetchFromAPI } from "../utils/fetchFromAPI";
 import { useParams } from "react-router-dom";
 
 const SearchFeed = () => {
-  // Change categories from sidebar with a default of New
   const [videos, setVideos] = useState([]);
   const { searchTerm } = useParams();
 
-  // Run fetch on each change of category
   useEffect(() => {
     fetchFromAPI(`search?part=snippet&q=${searchTerm}`).then((data) =>
       setVideos(data.items)

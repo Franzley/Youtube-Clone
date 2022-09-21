@@ -1,6 +1,6 @@
 import React from "react";
 import { Stack, Box } from "@mui/material";
-import { VideoCard, ChannelCard } from "./";
+import { VideoCard, ChannelCard } from "./exports";
 
 const Videos = ({ videos, direction }) => {
   if (!videos?.length) {

@@ -1,7 +1,6 @@
 import React from "react";
 import { Stack } from "@mui/material";
 import { categories } from "../utils/constants";
-// import { Category } from "@mui/icons-material";
 
 const Sidebar = ({ selectedCategory, setSelectedCategory }) => {
   return (
@@ -9,7 +8,9 @@ const Sidebar = ({ selectedCategory, setSelectedCategory }) => {
       direction={{ xs: "row", md: "column" }}
       sx={{
         overflowY: "auto",
-        height: { xs: "auto", md: "95%" },
+        height: { xs: "auto", md: "92vh" },
+        borderRight: "1px solid #3d3d3d",
+        px: { xs: 0, md: 2 },
       }}
     >
       {categories.map((category) => (
@@ -20,7 +21,6 @@ const Sidebar = ({ selectedCategory, setSelectedCategory }) => {
           className="category-btn"
           style={{
             background: category.name === selectedCategory && "#FC1503",
-            color: "white",
           }}
           key={category.name}
         >
@@ -28,7 +28,6 @@ const Sidebar = ({ selectedCategory, setSelectedCategory }) => {
           <span
             style={{
               color: category.name === selectedCategory ? "white" : "red",
-              marginRight: "15px",
             }}
           >
             {category.icon}
@@ -38,7 +37,6 @@ const Sidebar = ({ selectedCategory, setSelectedCategory }) => {
           <span
             style={{
               opacity: category.name === selectedCategory ? "1" : "0.8",
-              marginRight: "15px",
             }}
           >
             {category.name}

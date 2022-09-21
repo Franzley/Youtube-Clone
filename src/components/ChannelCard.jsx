@@ -6,6 +6,7 @@ import { demoProfilePicture } from "../utils/constants";
 
 const ChannelCard = ({ channelDetail, marginTop }) => {
   return (
+    // Display channel icon and title
     <Box
       sx={{
         boxshadow: "none",
@@ -19,6 +20,7 @@ const ChannelCard = ({ channelDetail, marginTop }) => {
         marginTop,
       }}
     >
+      {/* When clicked, got to the channel with the correct ID */}
       <Link to={`/channel/${channelDetail?.id?.channelId}`}>
         <CardContent
           sx={{
