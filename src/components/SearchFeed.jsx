@@ -4,7 +4,7 @@ import { Videos } from "./exports";
 import { fetchFromAPI } from "../utils/fetchFromAPI";
 import { useParams } from "react-router-dom";
 
-const SearchFeed = () => {
+const SearchFeed = ({ setTheme }) => {
   const [videos, setVideos] = useState([]);
   const { searchTerm } = useParams();
 
@@ -20,7 +20,7 @@ const SearchFeed = () => {
         Search Results For:{" "}
         <span style={{ color: "#f31503" }}>{searchTerm}</span> Videos
       </Typography>
-      <Videos videos={videos} />
+      <Videos videos={videos} setTheme={setTheme} />
     </Box>
   );
 };

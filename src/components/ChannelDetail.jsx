@@ -5,7 +5,7 @@ import { Box } from "@mui/material";
 import { Videos, ChannelCard } from "./exports";
 import { fetchFromAPI } from "../utils/fetchFromAPI";
 
-const ChannelDetail = () => {
+const ChannelDetail = ({ setTheme }) => {
   const { id } = useParams();
   const [channelDetail, setChannelDetail] = useState(null);
   const [videos, setVideos] = useState([]);
@@ -37,7 +37,7 @@ const ChannelDetail = () => {
 
         <Box p={2} display="flex">
           <Box sx={{ mr: { sm: "100px" } }} />
-          <Videos videos={videos} />
+          <Videos videos={videos} setTheme={setTheme} />
         </Box>
       </Box>
     </Box>

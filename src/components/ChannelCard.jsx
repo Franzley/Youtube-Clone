@@ -4,7 +4,7 @@ import { Typography, CardContent, CardMedia, Box } from "@mui/material";
 import { CheckCircle } from "@mui/icons-material";
 import { demoProfilePicture } from "../utils/constants";
 
-const ChannelCard = ({ channelDetail, marginTop }) => {
+const ChannelCard = ({ channelDetail, marginTop, setTheme }) => {
   return (
     // Display channel icon and title
     <Box
@@ -28,7 +28,7 @@ const ChannelCard = ({ channelDetail, marginTop }) => {
             flexDirection: "column",
             justifyContent: "center",
             textAlign: "center",
-            color: "#fff",
+            color: setTheme === "#fff" ? "#000" : "#fff",
           }}
         >
           <CardMedia

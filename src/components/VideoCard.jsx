@@ -14,6 +14,7 @@ const VideoCard = ({
     id: { videoId },
     snippet,
   },
+  setTheme,
 }) => {
   return (
     <Card
@@ -37,9 +38,18 @@ const VideoCard = ({
           }}
         />
       </Link>
-      <CardContent sx={{ backgroundColor: "#1e1e1e", height: "106px" }}>
+      <CardContent
+        sx={{
+          backgroundColor: setTheme === "#fff" ? "#d2d2d2" : "#1e1e1e",
+          height: "106px",
+        }}
+      >
         <Link to={videoId ? `/video/${videoId}` : demoVideoUrl}>
-          <Typography variant="subtitle1" fontWeight="bold" color="#FFF">
+          <Typography
+            variant="subtitle1"
+            fontWeight="bold"
+            color={setTheme === "#fff" ? "#000" : "#FFF"}
+          >
             {snippet?.title?.slice(0, 60) || demoVideoTitle.slice(0, 60)}
           </Typography>
         </Link>

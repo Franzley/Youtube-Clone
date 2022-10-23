@@ -4,8 +4,18 @@ import { Link } from "react-router-dom";
 
 import { logo } from "../utils/constants.js";
 import SearchBar from "./SearchBar.jsx";
+import { useState, useEffect } from "react";
 
-const Navbar = () => {
+const Navbar = (props) => {
+  // https://medium.com/swlh/dark-mode-in-react-with-localstorage-d59270295909
+  // Local Storage
+  const [theme, setTheme] = useState(localStorage.getItem("theme"));
+
+  useEffect(() => {
+    localStorage.setItem("theme", theme);
+    props.getTheme(theme);
+  }, [theme]);
+
   return (
     <Stack
       direction="row"
@@ -13,7 +23,7 @@ const Navbar = () => {
       p={2}
       sx={{
         position: "sticky",
-        background: "#000",
+        background: theme,
         top: 0,
         justifyContent: "space-between",
       }}
@@ -21,6 +31,22 @@ const Navbar = () => {
       <Link to="/" style={{ display: "flex", alignItems: "center" }}>
         <img src={logo} alt="logo" height={45} />
       </Link>
+      <Stack direction="row">
+        <button
+          onClick={() => {
+            setTheme("#fff");
+          }}
+        >
+          Light
+        </button>
+        <button
+          onClick={() => {
+            setTheme("#000");
+          }}
+        >
+          Dark
+        </button>
+      </Stack>
       <SearchBar />
     </Stack>
   );
