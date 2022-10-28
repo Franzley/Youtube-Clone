@@ -9,7 +9,7 @@ import { useState, useEffect } from "react";
 const Navbar = (props) => {
   // https://medium.com/swlh/dark-mode-in-react-with-localstorage-d59270295909
   // Local Storage
-  const [theme, setTheme] = useState("#fff");
+  const [theme, setTheme] = useState("#000");
 
   useEffect(() => {
     localStorage.setItem("theme", theme);
