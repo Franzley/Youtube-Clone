@@ -5,11 +5,16 @@ import { Link } from "react-router-dom";
 import { logo } from "../utils/constants.js";
 import SearchBar from "./SearchBar.jsx";
 import { useState, useEffect } from "react";
+import { Brightness3, BrightnessHigh } from "@mui/icons-material";
 
 const Navbar = (props) => {
   // https://medium.com/swlh/dark-mode-in-react-with-localstorage-d59270295909
   // Local Storage
-  const [theme, setTheme] = useState(localStorage.getItem("theme") === null? "#000" : localStorage.getItem("theme"))
+  const [theme, setTheme] = useState(
+    localStorage.getItem("theme") === null
+      ? "#000"
+      : localStorage.getItem("theme")
+  );
 
   useEffect(() => {
     localStorage.setItem("theme", theme);
@@ -32,20 +37,24 @@ const Navbar = (props) => {
         <img src={logo} alt="logo" height={45} />
       </Link>
       <Stack direction="row">
-        <button
-          onClick={() => {
-            setTheme("#fff");
-          }}
-        >
-          Light
-        </button>
-        <button
-          onClick={() => {
-            setTheme("#000");
-          }}
-        >
-          Dark
-        </button>
+        {theme === "#000" && (
+          <button className="clay-dark"
+            onClick={() => {
+              setTheme("#fff");
+            }}
+          >
+            <BrightnessHigh />
+          </button>
+        )}
+        {theme === "#fff" && (
+          <button className="clay-light"
+            onClick={() => {
+              setTheme("#000");
+            }}
+          >
+            <Brightness3 />
+          </button>
+        )}
       </Stack>
       <SearchBar />
     </Stack>
